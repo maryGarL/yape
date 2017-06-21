@@ -1,15 +1,18 @@
 'use strict';
 const Welcome = (update) => {
-  const section=('<secction></secction>')
+  const section=$('<secction></secction>')
   const div=$('<div class="owl-carousel owl-theme"></div>');
-  const img1=$('<div class="item"><img class="owl-lazy" data-src="assets/img/icons/icon-people.png" alt=""><h2>sss</h2><h2>asss</h2></div>');
-  const img2=$('<div class="item"><img class="owl-lazy" data-src="assets/img/icons/happy-person.png" alt=""></div>');
-  const img3=$('<div class="item"><img class="owl-lazy" data-src="assets/img/icons/group-people.png" alt=""></div>');
-
-  div.append(img1)
+  const div2=$('<div class="boton"></div>');
+  const img1=$('<div class="item"><img class="owl-lazy" data-src="assets/img/icons/icon-people.png" alt=""><div><h2>Paga a tu amigos</h2><p>Paga a quien quieras desde donde quieras, sin usar efectivo</p></div>');
+  const img2=$('<div class="item"><img class="owl-lazy" data-src="assets/img/icons/happy-person.png" alt=""><div><h2>Sin numero de cuenta</h2><p>Elige a quien pagar desde tu lista de contactos</p></div>');
+  const img3=$('<div class="item"><img class="owl-lazy" data-src="assets/img/icons/group-people.png" alt=""><div><h2>Gratis y Seguro</h2><p>La transferencia es inmediata y gratuita de una cuenta a otra</p></div>');
+  const boton =$('<button type="button" class="btn btn-warning boton1">Registrate</button>')
+  div.append(img1);
   div.append(img2);
   div.append(img3);
-
+  div2.append(boton);
+  section.append(div);
+  section.append(div2);
 
   div.owlCarousel({
     items:1,
@@ -17,8 +20,11 @@ const Welcome = (update) => {
     loop:true,
     margin:10
 });
-
-  return div
+boton.on('click',()=>{
+		state.selectedPantalla='getNumber';
+		update();
+	})
+  return section
 
 }
 
