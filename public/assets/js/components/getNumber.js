@@ -47,11 +47,23 @@ const getNumber=(update)=>{
 	  });
 });
 
-
-
-
 boton2.on('click',()=>{
+		console.log(state.pantalla);
+		console.log(input1.val());
+		// let codigo;
+		var registro= $.post('api/registerNumber',{phone:input1.val(), terms:true},(response)=>{
+			console.log(response);
+			console.log(response.message);
+			console.log(response.data.phone);
+			state.phone=response.data.phone;
+			console.log(state.phone);
+			$ ('.telefono').text(response.data.phone);
+			return response;
+
+		},'json');
+
 	state.selectedPantalla='createUser';
+	state.code=registro;
 	update();
 })
 	return div3;

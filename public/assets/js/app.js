@@ -20,7 +20,21 @@ const render = (clase) => {
  if(state.selectedPantalla=='createUser'){
  wrapper.append(createUser(update));
  }
-
+ if(state.selectedPantalla=='newUser'){
+ wrapper.append(newUser(update));
+ }
+ if(state.selectedPantalla=='checkConfirmation'){
+ wrapper.append(checkConfirmation(update));
+ }
+ if(state.selectedPantalla=='creditCardRegister'){
+ wrapper.append(creditCardRegister(update));
+ }
+ if(state.selectedPantalla=='validateCreditCard'){
+ wrapper.append(validateCreditCard(update));
+ }
+ if(state.selectedPantalla=='finish'){
+ wrapper.append(finish(update));
+ }
   clase.append(wrapper);
   }
 
